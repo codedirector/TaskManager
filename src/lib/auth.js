@@ -3,17 +3,17 @@ import admin from "firebase-admin";
 
 const adminConfig = {
   type: process.env.type,
-  projectId: process.env.projectId,
-  privateKeyId: process.env.privateKeyId,
-  privateKey: process.env.privateKey?.replace(/\\n/g, '\n'),
-  clientEmail: process.env.clientEmail,
-  clientId: process.env.clientId,
-  authUri: process.env.authUri,
-  tokenUri: process.env.tokenUri,
-  authProviderX509CertUrl: process.env.authProviderX509CertUrl,
-  clientC509CertUrl: process.env.clientC509CertUrl,
-  universeDomain: process.env.universeDomain,
+  project_id: process.env.project_id,
+  private_key_id: process.env.private_key_id,
+  private_key: process.env.private_key?.replace(/\\n/g, '\n'),
+  client_email: process.env.client_email,
+  client_id: process.env.client_id,
+  auth_uri: process.env.auth_uri,
+  token_uri: process.env.token_uri,
+  auth_provider_x509_cert_url: process.env.auth_provider_x509_cert_url,
+  client_x509_cert_url: process.env.client_x509_cert_url,
 };
+
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(
@@ -22,7 +22,7 @@ if (!admin.apps.length) {
   });
 }
 export async function verifySession() {
-  // console.log("hello/fkmlfnd",process.env.FIREBASE_ADMIN_KEY)
+
 
   const token =(await cookies()).get("session")?.value;
   if (!token) return null;
