@@ -7,9 +7,9 @@ import { useRouter } from "next/navigation";
 
 export default function Signup(){
   const router=useRouter();
-     const [email, setemail] = useState("");
-  const [password, setpassword] = useState("");
-  const [name, setname] = useState("");
+     const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
 
   const handleClick = async () => {
     if (!name || !email || !password) {
