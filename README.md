@@ -38,68 +38,76 @@ Demo account:
 ---
 
 ## 📂 Folder Structure
-app/
-  ├─ login/
-  ├─ signup/
-  ├─ lists/
-  │   ├─ page.jsx
-  │   └─ alllists/
-           ├─[id]/page.jsx
-           ├─ page.jsx
-  ├─ api/
-      ├─ set-cookie/route.js
-      └─ logout/route.js
+📦 app/
+├── login/
+├── signup/
+├── lists/
+│   ├── page.jsx
+│   └── alllists/
+│       └── [id]/page.jsx
+├── page.jsx
+├── api/
+│   ├── set-cookie/
+│   │   └── route.js
+│   └── logout/
+│       └── route.js
 
-components/
-  ├─ Navbar.jsx
-  ├─ ListsUI.jsx
-  └─ TasksUI.jsx
+📦 components/
+├── Navbar.jsx
+├── ListsUI.jsx
+└── TasksUI.jsx
 
-redux/
-  ├─ store.js
-  ├─ listsSlice.js
-  └─ tasksSlice.js
+📦 redux/
+├── store.js
+├── listsSlice.js
+└── tasksSlice.js
 
-lib/
-  ├─ firebase.js
-  ├─ auth.js
-  └─ indexedDB.js
-
-
-  Clone the repo:
+📦 lib/
+├── firebase.js
+├── auth.js
+└── indexedDB.js
+✅ Usage Instructions
+1. Clone the repository
+bash
+Copy code
 git clone https://github.com/codedirector/TaskManager.git
-
-Install dependencies:
+cd TaskManager
+2. Install dependencies
+bash
+Copy code
 npm install
-
-Run locally:
+3. Run the app locally
+bash
+Copy code
 npm run dev
+Then open: http://localhost:3000
 
+⚠️ Known Issues
+First load while offline shows empty lists until IndexedDB syncs with Firestore.
 
-Known Issues
-First load while offline shows empty lists until IndexedDB syncs.
-
-.env.local file should contain
-
-# Firebase config
+✅ .env.local Configuration
+🔐 Firebase Client SDK (frontend)
+env
+Copy code
 NEXT_PUBLIC_FIREBASE_API_KEY=your_key
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_domain
 NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_bucket
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
-
-# Admin SDK (for server-side Firebase admin)
+🔐 Firebase Admin SDK (for server-side use like API routes)
+env
+Copy code
 TYPE=service_account
 PROJECT_ID=your_project_id
-PRIVATE_KEY_ID=...
+PRIVATE_KEY_ID=your_private_key_id
 PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n"
-CLIENT_EMAIL=...
-CLIENT_ID=...
+CLIENT_EMAIL=your_service_account_email
+CLIENT_ID=your_client_id
 AUTH_URI=https://accounts.google.com/o/oauth2/auth
 TOKEN_URI=https://oauth2.googleapis.com/token
 AUTH_PROVIDER_X509_CERT_URL=https://www.googleapis.com/oauth2/v1/certs
-CLIENT_X509_CERT_URL=https://www.googleapis.com/robot/v1/metadata/x509/...
+CLIENT_X509_CERT_URL=https://www.googleapis.com/robot/v1/metadata/x509/your_service_account_email
 
 
 👨‍💻 Author
