@@ -26,7 +26,7 @@ export default function ListsUI() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("User logged in", user.uid); // just checking
+        // console.log("User logged in", user.uid); // just checking
         dispatch(fetchLists(user.uid));
       } else {
         console.log("No user");

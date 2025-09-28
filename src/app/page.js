@@ -71,7 +71,7 @@ export default function Home() {
     {error && <p className="text-red-600">{error}</p>}
 
     {!loading && searchResults.length === 0 && searchQuery.trim() !== '' && (
-      <p>No tasks found matching "{searchQuery}"</p>
+      <p>No tasks found matching {searchQuery}</p>
     )}
 
     <ul>
