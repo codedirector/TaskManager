@@ -11,6 +11,9 @@ The app allows users to create lists, add/manage tasks with due dates, prioritie
 Demo account:  
 - Email: test@intern.com
 - Password: hello12
+
+🎥 Demo Recording 
+📹 [Demo Video](https://drive.google.com/file/d/1Np1w6Cc2Mp-Q3qVa8WwYN06OcqcGzYfs/view?usp=sharing)
 ---
 
 ## 📦 Tech Stack
